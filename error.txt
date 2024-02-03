@@ -1,0 +1,18 @@
+raceback (most recent call last):
+  File "c:\zdrive\Scrapping\sele_scrap.py", line 100, in <module>
+    with open(filename, 'w', newline='') as f:
+PermissionError: [Errno 13] Permission denied: 'extracted_data.csv'
+
+writing to a file that is opened in Excel.
+
+
+I just had to add ", encoding='utf-8'" to my csv.writer line:
+
+the csv module in python is notorious for not handling unicode characters well. Unless all characters fall in the ascii codec you probably won't be able to write the row. There is a (somewhat) drop in replacement called unicodecsv that you may want to look into. https://pypi.python.org/pypi/unicodecsv
+
+bs4.FeatureNotFound: Couldn't find a tree builder with the features you requested: html5lib. Do you need to install a parser library?
+used html.parser 
+
+not extracting the links 
+use [] to get values from the attributes 
+textual content can be directly obtained from .text 
